@@ -1,6 +1,7 @@
 # Parking-API
 
-## 1. method:POST  path:/parkingLots
+## 1. Add a parkingLot  
+## method:POST  path:/parkingLots 
 ``` 
 Request:
 ParkingLot parkingLot
@@ -14,7 +15,8 @@ ArrayList<ParkingLot>
 ]
 ```
 
-## 2. method:POST path:/parkingBoys
+## 2.Add a parkingBoy 
+## method:POST path:/parkingBoys
 ```
 Request:
 ParkingBoy pakingBoy
@@ -35,7 +37,8 @@ ArrayList<PrkingBoy>
 ]
 ```
 
-## 3. method:POST path:/parkingBoys/{boyId}/parkingLots
+## 3.Arrange a parkingLot for a parkingBoy by id
+## method:POST path:/parkingBoys/{boyId}/parkingLots
 ```
 Request:
 ParkingLot parkingLot
