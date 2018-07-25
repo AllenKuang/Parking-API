@@ -10,6 +10,7 @@ public class ParkingLotServiceImp {
 
     public ParkingLotServiceImp(){
         this.parkingLots=new ArrayList<>();
+        this.getParkingLots().add(new ParkingLot(1,20));
     }
 
     public ArrayList<ParkingLot> getParkingLots() {
@@ -23,5 +24,15 @@ public class ParkingLotServiceImp {
     public ArrayList<ParkingLot> addParkingLot(ParkingLot parkingLot) {
         this.getParkingLots().add(parkingLot);
         return this.getParkingLots();
+    }
+
+    public ArrayList<ParkingLot> deleteParkingLotById(int parkingLotId) {
+        for(int i=0;i<this.getParkingLots().size();i++){
+            if(this.getParkingLots().get(i).getParkingLotId()==parkingLotId){
+                this.getParkingLots().remove(i);
+                return this.getParkingLots();
+            }
+        }
+        return null;
     }
 }

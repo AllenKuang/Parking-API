@@ -13,6 +13,9 @@ public class ParkingBoyServiceImp {
 
     public ParkingBoyServiceImp(){
         this.parkingBoys=new ArrayList<>();
+        ArrayList<ParkingLot> parkingLots=new ArrayList<>();
+        parkingLots.add(new ParkingLot(1,20));
+        parkingBoys.add(new ParkingBoy(1,parkingLots));
     }
 
     public ArrayList<ParkingBoy> getParkingBoys() {
@@ -23,21 +26,31 @@ public class ParkingBoyServiceImp {
         this.parkingBoys = parkingBoys;
     }
 
-    public ParkingBoy addparkingBoy(ParkingBoy parkingBoy) {
+    public void addparkingBoy(ParkingBoy parkingBoy) {
         this.parkingBoys.add(parkingBoy);
-        return parkingBoy;
     }
 
 
 
-    public ParkingBoy addParkingLot(long boyId,ParkingLot parkingLot) {
+    public void addParkingLot(long boyId,ParkingLot parkingLot) {
         for(ParkingBoy tempParkingBoy:this.getParkingBoys()){
             if(tempParkingBoy.getParkingBoyId()==boyId) {
                 tempParkingBoy.getParkingLots().add(parkingLot);
-                return tempParkingBoy;
+                //return tempParkingBoy;
+            }
+        }
+        //return null;
+        //this.boysParkingLots.add();
+    }
+
+    public ArrayList<ParkingBoy> deleteParkingBoyById(int boyId) {
+        for(int i=0;i<this.getParkingBoys().size();i++){
+            if(this.getParkingBoys().get(i).getParkingBoyId()==boyId){
+                this.getParkingBoys().remove(i);
+                return this.getParkingBoys();
             }
         }
         return null;
-        //this.boysParkingLots.add();
     }
+
 }

@@ -4,19 +4,28 @@ import org.springframework.stereotype.Component;
 
 
 public class ParkingLot {
-    private long parkingLotId;
-
+    private int parkingLotId;
+    private int size;
     public ParkingLot(){
 
     }
-    public ParkingLot(ParkingLot parkingLot){
-        this.parkingLotId=parkingLot.getParkingLotId();
+    public ParkingLot(int parkingLotId,int size){
+        this.parkingLotId=parkingLotId;
+        this.size=size;
     }
-    public long getParkingLotId() {
+    public int getParkingLotId() {
         return parkingLotId;
     }
 
-    public void setParkingLotId(long parkingLotId) {
+    public void setParkingLotId(int parkingLotId) {
         this.parkingLotId = parkingLotId;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 }
